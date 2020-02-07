@@ -1,0 +1,222 @@
+body {
+  background-color: midnightblue;
+  font-family: montserrat, sans-serif;
+}
+
+header{
+  position: fixed;
+  z-index: 9999!important;
+  width: 100%;
+  top: 0;
+  background-color: #0a0b4d;
+  height: 40px;
+	padding: 24px 0px 24px 0px;
+  margin-bottom: 20px;
+}
+
+div {
+  text-align: justify;
+}
+
+.nav-list .nav-list-item{
+  list-style-type: none;
+  margin: 20px;
+  display: inline;
+}
+
+.logo{
+  float: right;
+  margin-right: 45px;
+  margin-top: -35px;
+}
+
+ .nav-list .nav-list-item a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav-list .nav-list-item a:hover {
+  color: indianred;
+}
+
+section.main-content .background-setup{
+  background-image: url(./myImg.jpg);
+  height: 906px;
+  width: 48%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  float: right;
+  display: inline-block;
+  position: fixed;
+}
+
+section.main-content .text-content{
+  float: left;
+  display: inline-block;
+  width: 48%;
+  font-size: 20px;
+  color: white;
+  height: 800px;
+  padding: 200px 0px 0px 20px;
+}
+
+section.main-content .text-content span{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section.main-content .text-content h1{
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  line-height: 60px;
+  color: #65d4ac;
+  margin-top: 35px;
+}
+
+.personal-info, .movie-info, .series-info{
+  background-color: #4949ad;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.personal-info h2, .movie-info h2, .series-info h2, .assignment-info-table h2{
+  color: #65d4ac;
+}
+
+.personal-info ul {
+  padding: 0px;
+}
+
+.personal-info ul li {
+  list-style-type: none;
+  margin-top: 16px;
+}
+
+.personal-info ul li span.personal-info-text{
+  font-size: 20px;
+}
+
+.assignment-info-table table {
+  width: 100%;
+}
+
+
+.assignment-info-table table, th, td {
+  margin-top: 20px;
+  border: 4px solid #d1d1de;
+  padding: 2px;
+  border-collapse: collapse;
+  word-break: break-word;
+}
+
+.assignment-info-table table, th, td a{
+  color: #FFF;
+  text-align: center;
+}
+
+.assignment-info-table table tr:nth-child(even) {
+  background-color: midnightblue;
+}
+
+.assignment-info-table table tr:nth-child(odd) {
+ background-color: #4949ad;
+}
+
+.assignments, .projects{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* Style for Resume page */
+
+.resume-content{
+  margin: 100px 2%;
+  border: 1px solid #fff;
+  height: auto;
+  padding: 24px;
+  color: #fff;
+}
+
+blockquote{
+  color: #65d4ac;
+}
+
+.social-icon{
+  display: inline-block;
+  float: right;
+  margin-right: 200px;
+}
+
+.social-icon a{
+  margin-left: 20px;
+}
+
+.social-icon a:hover{
+  
+}
+
+
+h2{
+  font-size: 24px;  
+}
+
+h3{
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.resume-content .resume-name{
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.resume-content address{
+  font-style: italic;
+  font-size: 16px;
+  margin-left: 20%;
+  font-family: calibri; 
+}
+
+.resume-content .resume-blocks{
+  margin-top: 32px;
+}
+
+.resume-content .resume-blocks .resume-list li{
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+.college-names{
+  background-color: #4949ad;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.georgia-state-text::before{
+  content: "Georgia State";
+  color: red;
+  font-weight: bold;
+}
+
+.computer-science-text::before{
+  content: "Computer Science";
+  color: red;
+  font-weight: bold;
+}
+
+.year-text::before{
+  content: "2011";
+  color: red;
+  font-weight: bold;
+}
+
+.role-text::before{
+  content: "Role";
+  color: red;
+  font-weight: bold;
+}
