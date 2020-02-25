@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang ="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Personal Information</title>
+		<meta charset="utf-8" name="viewport" 
+        content= "width=device-width, initial-scale=1.0"> 
+		<link rel="stylesheet" type="text/css" href="../css/home.css">
+	</head>
+	<body class="participantFormBody">
+		<div class="participantForm">
+			<h1 class="participantFormHeading">Welcome to Who Wants to be a Millionaire</h1>
+			
+			<form  name="personalInfo" method="post" action="startGame.html">
+		        <h2 class="partFormSubHead">
+		          Please enter the information below to start with the game
+		        </h2>
+		        <fieldset>
+		          <legend> Personal Information</legend>
+		          <div class="nameCont">
+		            <label for="fname">First Name:</label>
+		            <input type="text" id="fname" name="fname" value="" required minlength="4" maxlength="15"><br>
+		          </div>
+		          <div class="nameCont">
+		            <label for="lname">Last name:</label>
+		            <input type="text" id="lname" name="lname" value="" required minlength="4" maxlength="15"><br>
+		          </div>
+		        </fieldset>
+
+		         <fieldset>
+		          <legend> Gender </legend>
+		          <div class="nameCont">
+		   			<label for="gender">Gender:</label>
+					<input type="radio" id="male" name="gender" value="male">
+					<label for="male">Male</label>
+					<input type="radio" id="female" name="gender" value="female">
+					<label for="female">Female</label>
+					<input type="radio" id="other" name="gender" value="other">
+					<label for="other">Other</label><br>
+		          </div>
+		        </fieldset>
+
+		        <fieldset>
+		          <legend> How can we reach you? </legend>
+		          <div class="nameCont">
+		          	<label for="primaryPhone">Phone Number: </label>
+					<input type="tel" id="primaryPhone" name="primaryPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+		          </div>
+
+		          <div class="nameCont">
+		    		<label for="friendPhone">Phone a Friend Number: </label>
+					<input type="tel" id="friendPhone" name="friendPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+		          </div>
+
+		          <div class="emailCont">
+		          	<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required >
+		          </div>
+		        </fieldset>
+
+		        <fieldset>
+		          <legend> Date of Birth </legend>
+		          <div class="nameCont">
+					<label for="dob">Enter your birth date:</label>
+					<input type="date" id="dob" name="dob" required >
+		          </div>
+		        </fieldset>
+
+		        <fieldset>
+		          <legend> Address </legend>
+		          <div class="nameCont">
+					<label for="addr1">Address Line 1:</label>
+					<input type="text" id="addr1" name="addr1" value="" required>
+		          </div>
+
+		          <div class="nameCont">
+					<label for="addr2">Address Line 2:</label>
+					<input type="text" id="addr2" name="addr2" value="">
+		          </div>
+
+		          <div class="emailCont">
+					<label for="city">City:</label>
+					<input type="text" id="city" name="city" value="" required>
+		          </div>
+
+		          <div class="emailCont">
+					<label for="state">State:</label>
+	 				<input type="text" list="state" name="state">
+	 				<datalist id="state">
+	 				 	<option value="AL"> 
+	 				 	<option value="AK">
+	 				 	<option value="AZ"> 
+	 				 	<option value="AR">
+	 				 	<option value="CA"> 
+	 				 	<option value="CO">
+	 				 	<option value="CT"> 
+	 				 	<option value="DE">
+	 				 	<option value="FL"> 
+	 				 	<option value="GA">
+	 				 	<option value="HI"> 
+	 				 	<option value="ID">
+	 				 	<option value="IL"> 
+	 				 	<option value="IN">
+	 				 	<option value="IA"> 
+	 				 	<option value="KS">
+	 				 	<option value="KY"> 
+	 				 	<option value="LA">
+	 				 	<option value="ME"> 
+	 				 	<option value="MD">
+	 				 	<option value="MA"> 
+	 				 	<option value="MI">
+	 				 	<option value="MN"> 
+	 				 	<option value="MS">
+	 				 	<option value="MO"> 
+	 				 	<option value="MT">
+	 				 	<option value="NE"> 
+	 				 	<option value="NV">
+	 				 	<option value="NH"> 
+	 				 	<option value="NJ">
+	 				 	<option value="NM"> 
+	 				 	<option value="NY">
+	 				 	<option value="NC"> 
+	 				 	<option value="ND">
+	 				 	<option value="OH"> 
+	 				 	<option value="OK">
+	 				 	<option value="OR"> 
+	 				 	<option value="PA">
+	 				 	<option value="RI"> 
+	 				 	<option value="SC">
+	 				 	<option value="SD"> 
+	 				 	<option value="TN">
+	 				 	<option value="TX"> 
+	 				 	<option value="UT">
+	 				 	<option value="VT"> 
+	 				 	<option value="VA">
+	 				 	<option value="WA"> 
+	 				 	<option value="WV">
+	 				 	<option value="WI">
+	 				 	<option value="WY"> 
+	 			 	</datalist>
+		          </div>          
+
+		          <div class="emailCont">
+					<label for="zip">Zip Code:</label>
+					<input id="zip" name="zip" type="text" pattern="[0-9]*">
+		          </div>
+		        </fieldset>
+		 		<div class="footerSection">
+		 			<button type="submit" class="primaryNavBtn participantInfoBtn"><span>Start Game</span></button>
+		 		</div>	
+			</form>
+		</div>
+		
+	</body>
+	</html>
