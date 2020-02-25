@@ -1,0 +1,308 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Helvetica";
+}
+.bg{
+	background-image: url("../images/maxresdefault.jpg");
+	height: 100%; 
+	background-position: center;
+ 	background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg .youTubeLink{
+  padding: 40px;
+  float: right;
+}
+
+/* Primary Navigation button start */
+
+.primaryNavBtn{
+  position: absolute;
+  top: 90%;
+  left: 77%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #4CAF50;
+  transition-duration: 0.4s;
+  background-color: #15f4ee;
+  width: 200px;
+  transition: all 0.5s;
+  margin: 5px;
+}
+
+.primaryNavBtn:hover {
+  background-color: #4CAF50;
+  color: white;
+ 
+}
+.primaryNavBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.primaryNavBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.primaryNavBtn:hover span {
+  padding-right: 25px;
+}
+
+.primaryNavBtn:hover span:after {
+  opacity: 1;
+}
+
+
+/* Participants info styles */
+
+.participantFormBody{
+  background-image: url("../images/genBack2.jpg");
+
+}
+
+.partFormSubHead{
+  color: #fff;
+}
+
+.participantFormHeading{
+  text-align: center;
+  font-size: 60px;
+  color: #fff;
+}
+
+.participantForm{
+  margin: 40px auto;
+  width: 80%;
+}
+
+
+.participantForm fieldset{
+  padding: 20px;
+}
+
+.participantForm input[type=text], .participantForm input[type=date], .participantForm input[type=tel] , .participantForm input[type=number], 
+.participantForm input[type=email]  {
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 55%;
+  font-size: 16px;
+  font-family: Helvetica;
+  float: right;
+}
+
+.participantForm input[type=text]:hover, .participantForm input[type=date]:hover, .participantForm input[type=tel]:hover, .participantForm input[type=number]:hover, 
+.participantForm input[type=email]:hover {
+  box-shadow: 0 0 12px #3fd626;
+} 
+
+.participantForm label{
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.participantForm legend{
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.participantForm input[type=radio]{
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: 9px;
+  left: 17px;
+}
+
+.nameCont{
+  display: inline-block;
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+}
+
+.participantInfoBtn{
+  position: relative;
+  float: left;
+}
+
+.footerSection{
+  padding: 40px;
+}
+
+.emailCont{
+  display: inline-block;
+  float: left;
+  width: 45%;
+  margin: 20px 5% 20px 0;
+}
+
+
+
+
+
+/* Game start styles */
+
+
+
+.gameBackground{
+  background-image: url("../images/genBack.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.leftPanel{
+  border: 2px solid #7474e0;
+  width: 75%;
+  float: left;
+  height: 100%;
+
+}
+
+.rightPanel{
+  border: 2px solid #7474e0;
+  width: 24%;
+  float: left;
+  height: 100%;
+}
+
+.amountPointer{
+  clear: both;
+  height: 70%;
+  font-family: arial;
+  font-weight: bold;
+  color: #fff;
+  list-style-type: decimal;
+  margin: 40px 20px 20px 10px;
+  list-style-position: inside;
+}
+
+.amountPointer li {
+  font-size: 30px;
+  padding:4px 0px 0px 0px;
+}
+
+.amountPointer li.active{
+  background-color: orange;
+}
+
+.lifelines{
+  list-style-type: none;
+  padding: 20px 0px 0px 10px;
+}
+
+.lifeline-icon{
+  margin: 20px;
+  display: inline;
+
+}
+
+.leaveGame{
+  width: 100px;
+  padding: 10px;
+}
+
+.leaveGame button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.question-boxCont{
+  height: 100px;
+  margin-top: 10%;
+  padding: 10px 111px 10px 140px;
+}
+
+.question-box{
+  border: 2px solid #7474e0;
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  margin: auto;   
+}
+
+.questionText{
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.answerBox{
+  background-color: #fff;
+  margin: 40px 0 0 10%;
+}
+
+.answerBox ul{
+  list-style-type: none;
+}
+
+.gameIcon{
+  text-align: center;
+  margin-left: 5%;
+}
+
+.answerBox div{
+  margin-bottom: 20px;
+}
+
+.answerBox div .answer{
+  padding: 24px 0px 0px 0px;
+  width: 38%;
+  height: 46px;
+  float: left;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  font-size: 20px;
+}
+
+.leftTriangle{
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-right: 50px solid black;
+  border-bottom: 35px solid transparent;
+  float: left;
+}
+
+.rightTriangle{
+  width: 0;
+  height: 0;
+  border-top: 35px solid transparent;
+  border-left: 50px solid black;
+  border-bottom: 35px solid transparent;
+  float: left;
+}
+
+.maintCont div{
+  background: url("../images/pageMaint.jpeg");
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
