@@ -262,15 +262,21 @@ function checkAnswer(btnObj){
     if(questionLevel === 5 || questionLevel === 10){
       showRewardsModal();
       showNextQuestion(10000);
-    } else{
-      showNextQuestion(5000);
-    }
+    } else if(questionLevel === 15){
+        setTimeout(function(){
+          exitGame();
+        }, 3000);
+      }
+      else {
+        showNextQuestion(5000);
+      }
   } else{
     wrongAnswerResponse(btnObj);
   }
 }
 
 function showRewardsModal(winningAmount){
+  removeClass("rewardsModal", "animate-modal-hide");
   addClass("rewardsModal", "animate-modal");
   var winningAmount = getWinningAmount();
   document.getElementById("rewardsHeader").innerHTML = "Congratulations, you have won " + winningAmount + ". You will take home this amount for sure.";
@@ -284,7 +290,9 @@ function showRewardsModal(winningAmount){
 
 function changeWinningAmount(btnObj){
   removeClass("level" + questionLevel, "active");
-  addClass("level" + (questionLevel + 1), "active");
+  if(questionLevel != 14){
+    addClass("level" + (questionLevel + 1), "active");
+  }
   addClass("level" + questionLevel, "correct");
   btnObj.className += " " + "correct";
   resetBtnClass(btnObj);
@@ -326,16 +334,15 @@ function handleFiftyFifty(){
     var currentQuestionId = questions[currentQuestionIndex].questionsId;
     var correctOption = getCorrectOption(currentQuestionId);
     var buttons = document.getElementById("allAnswers").querySelectorAll(".answer-box");
-    var buttons = document.getElementById("allAnswers").querySelectorAll(".answer-box");
     var wrongOptions = generateOptionsToRemove(correctOption);
     for (var i = 0; i < buttons.length; i++) {
       if (wrongOptions.indexOf(i) != -1) { 
-        buttons[i].innerHTML = "";
-        buttons[i].style.padding = "33px 40px 32px 40px";
+        buttons[i].style.color = "#000";
       }
     }
     document.getElementById("fiftyFifty").style.opacity = "0.2";
     usedFiftyFifty = true;
+    fiftyFiftyLevelUsed = questionLevel;
   }
 }
 
@@ -363,9 +370,6 @@ function initializeGame(){
 function exitGame(){
   hideElement("leftPanel");
   hideElement("rightPanel");
-  removeClass("gameOver", "hidden");
-  deleteCookie("name");
-  deleteCookie("phone");
   var winningAmount = getWinningAmount();
   if (winningAmount === 0){
     addClass("exitModal", "animate-modal");
@@ -386,6 +390,12 @@ function showNextQuestion(timeOutval){
     currentQuestionIndex += 1;
     setQuestion();
     setOptions();
+    var buttons = document.getElementById("allAnswers").querySelectorAll(".answer-box");
+    for (var i = 0; i < buttons.length; i++) {
+      if (usedFiftyFifty) { 
+        buttons[i].style.color = "#fff";
+      }
+    }
   }, timeOutval);
 }
 
@@ -457,7 +467,9 @@ function getWinningAmount(){
     } else if(questionLevel - 1 < 14){
       actualWinninAmount = "$25000";
     }
-  } else{
+  } else if(questionLevel == 0){
+    actualWinninAmount = 0;
+  } else {
     actualWinninAmount = rewardsLevelMap["level" + (questionLevel - 1)];
   }
   return actualWinninAmount;

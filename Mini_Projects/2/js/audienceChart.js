@@ -1,5 +1,5 @@
 function createAudienceChart(){
-  if(!usedAudiencePoll){
+  if(!usedAudiencePoll && (usedFiftyFifty && (fiftyFiftyLevelUsed != questionLevel))){
     document.getElementById("audiencePollCont").style.display = "block";
     document.getElementById("audiencePoll").style.opacity = "0.2";
     var optionPercent = findCorrectOption();

@@ -8,6 +8,7 @@ var usedAudiencePoll = false;
 var usedPhoneFriend = false;
 var gameLost = false;
 var winningAmunt = 0;
+var fiftyFiftyLevelUsed;
 var questions = [
   {
     "questionsId": "00001",
