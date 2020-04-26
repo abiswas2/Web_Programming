@@ -5,10 +5,13 @@ import "./HeaderComponent.css";
 function HeaderComponent(){
     return (
         <header>
+            <div className="logo">
+                <img src="./images/gsu-logo.png" alt="logo"></img>
+            </div>
             <nav>
                 <ul>
                     <li>
-                    <Link to="/home">Home</Link>
+                    <Link to="/eventHome">Home</Link>
                     </li>
                     <li>
                     <Link to="/about">Events</Link>

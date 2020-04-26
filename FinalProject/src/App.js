@@ -31,7 +31,7 @@ class App extends Component {
           <Route exact path="/events"> 
               <EventsComponent />
           </Route>
-          <Route path="/home">
+          <Route path="/eventHome">
             <Home/>
           </Route>
       </Router>

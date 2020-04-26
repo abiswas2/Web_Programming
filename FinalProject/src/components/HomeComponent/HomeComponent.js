@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import "./HomeComponent.css";
 
 
 class Home extends Component {
@@ -29,17 +30,22 @@ class Home extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Enter Event name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-         <label>
-          Enter Event Desc:
-          <input type="text" value={this.state.desc} onChange={this.handleChangeDesc} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <div className="home-cont">
+          <h1>
+              Create Event
+          </h1>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Enter Event name:
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <label>
+              Enter Event Desc:
+              <input type="text" value={this.state.desc} onChange={this.handleChangeDesc} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
     );
   }
 }

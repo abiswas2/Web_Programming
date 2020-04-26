@@ -70,10 +70,44 @@
 }
 
 .eventsFormModal h2{
-    text-align: center;
     font-size: 28px;
 }
 
+#eventUploadForm .inputCont input, #eventUploadForm .inputCont textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+    width: 25%;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+} 
+
+#eventUploadForm .inputCont label{
+    color: #403e3e;
+}
+
+.submit-event{
+    border-color: #0324a9;
+    border-style: solid;
+    background: #0324a9;
+    padding: 16px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .inputCont{
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+}
+
+#eventUploadForm .inputCont #aboutEvent{
+    width: 45%;
+    height: 100px;
+}
+
+#eventUploadForm .inputCont #aboutLabel{
+    vertical-align: top;
+    line-height: 120px;
 }

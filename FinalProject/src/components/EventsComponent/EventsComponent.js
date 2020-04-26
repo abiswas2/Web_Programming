@@ -19,10 +19,13 @@ class Events extends Component {
     this.setState({showForm : true});
   }
 
+  closeModal = (showFormState) => {
+    this.setState({showForm: showFormState});
+  }
+
   render() {
     return <div>
-            <h1> Events Page. Events Created are shown below </h1>
-            { this.state.showForm ? <EventsForm  eventName={this.state.eventName} /> : ""}
+            { this.state.showForm ? <EventsForm  eventName={this.state.eventName} closeModal={this.closeModal}/> : ""}
             <div className="event-card">
               <button className="event-btn" onClick= { this.openEventUploadModal }>
                 <h1 className="event-name"> { this.state.eventName } </h1> 
