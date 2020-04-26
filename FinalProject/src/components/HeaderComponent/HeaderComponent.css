@@ -1,0 +1,19 @@
+header{
+    background-color: #0039a6;
+    color: #FFF;
+    height: 60px;
+    padding-top: 10px;
+    margin-bottom: 100px;
+}
+
+header nav ul li{
+    display: inline;
+    text-decoration: none;
+    padding-right: 80px;
+}
+
+header nav ul li a{
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: none;
+}
