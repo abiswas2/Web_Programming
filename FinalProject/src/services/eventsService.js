@@ -7,7 +7,7 @@ const EventsService =  {
         return new Promise(function(resolve, reject) {
             console.log(data);
             try{
-                axios.post("https://9b3d5fa0.ngrok.io/events", data).then(res => {
+                axios.post("http://localhost:8000/events", data).then(res => {
                     if(res.data.code === 201){
                         resolve(res);
                     } else{
@@ -24,7 +24,7 @@ const EventsService =  {
     getEventService(){
         return new Promise(function(resolve, reject) {
             try{
-                axios.get("https://9b3d5fa0.ngrok.io/events").then(res => {
+                axios.get("http://localhost:8000/events").then(res => {
                     if(res){
                         resolve(res);
                     } else{
