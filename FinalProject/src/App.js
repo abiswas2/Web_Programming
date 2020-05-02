@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
 import EventsComponent from "./components/EventsComponent/EventsComponent";
 import Home from "./components/HomeComponent/HomeComponent";
 import SearchCheckIn from "./components/SearchCheckInComponent/SearchCheckInComponent";
@@ -33,7 +34,7 @@ class App extends Component {
           <Route exact path="/events"> 
               <EventsComponent />
           </Route>
-          <Route path="/eventHome">
+          <Route exact path="/">
             <Home/>
           </Route>
           <Route path="/event-check-in">
@@ -42,6 +43,7 @@ class App extends Component {
           <Route path="/download">
             <Download />
           </Route>
+          <FooterComponent />
       </Router>
     );
   }  

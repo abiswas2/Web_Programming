@@ -8,18 +8,15 @@ function HeaderComponent(){
             <div className="logo">
                 <img src="./images/gsu-logo.png" alt="logo"></img>
             </div>
-            <nav>
+            <nav className="header-mav">
                 <ul>
-                    <li>
-                        <Link to="/eventHome">Home</Link>
+                    <li id="home">
+                        <Link to="/">Home</Link>
                     </li>
-                    <li>
-                        <Link to="/about">Events</Link>
+                    <li id="events">
+                        <Link to="/events">Events</Link>
                     </li>
-                    <li>
-                        <Link to="/event-upload">Event Upload</Link>
-                    </li>
-                    <li>
+                    <li id="checkin">
                         <Link to="/event-check-in">Event Check In</Link>
                     </li>
                 </ul>

@@ -10,3 +10,35 @@
 .home-cont h1{
     text-align: left;
 }
+
+.inputCont input, #eventUploadForm .inputCont textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+    width: 55%;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+} 
+
+#eventUploadForm .inputCont label{
+    color: #403e3e;
+}
+
+.submit-event{
+    border-color: #0324a9;
+    border-style: solid;
+    background: #0324a9;
+    padding: 16px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}

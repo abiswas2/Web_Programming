@@ -1,18 +1,30 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import "./EventsComponent.css";
+import "../../Loading.css";
+import "../../App.css";
 import EventsForm from "../EventsFormComponent/EventsFormComponent";
+import EventsService from '../../services/eventsService';
 
 class Events extends Component {
   
   constructor(props) {
     super(props);
     if(this.props.location.state){
-    	this.state = { eventName: this.props.location.state.eventName, eventDesc: this.props.location.state.eventDesc};
-    } else {
-    	this.state = { eventName: "", showForm: false};
+      this.state = { eventName: this.props.location.state.eventName, eventDesc: this.props.location.state.eventDesc, showForm: false, events: []};
+    } else{
+      this.state = { eventName: "", eventDesc: "", showForm: false, events: []};
     }
     this.openEventUploadModal = this.openEventUploadModal.bind(this);
+  }
+
+  componentDidMount() {
+    EventsService.getEventService().then((res) => {
+      console.log(res.data.events);
+      this.setState({
+        events: res.data.events
+      });
+    })
   }
 
   openEventUploadModal(){
@@ -23,15 +35,44 @@ class Events extends Component {
     this.setState({showForm: showFormState});
   }
 
+  createEventCards = () => {
+    if(this.state.events.length > 1){
+      var eventsToShow = this.state.events;
+      return eventsToShow.map((event, index)=> {
+        if(event.eventName === this.state.eventName) {
+          return <div className="event-create-card" key={index}>
+                  <button className="event-btn" onClick= { this.openEventUploadModal }>
+                    <h1 className="event-name"> New Event: { this.state.eventName } </h1> 
+                    <p className="event-desc"> { this.state.eventDesc } </p>
+                  </button>
+                </div>;
+        } else{
+          return <div className="event-card" key={index}>
+                    <button className="event-btn">
+                      <h1 className="event-name"> { event.eventName } </h1> 
+                      <p className="event-desc"> {event.description } </p>
+                    </button>
+                  </div>;
+        }
+      });
+    }
+  }
+
+  showSpinner(msg){
+    if(this.state.events.length === 0){
+      return <div className="spinner"> <h1> {msg} </h1> <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>;
+    } else{
+      return "";
+    }
+  }
+
   render() {
     return <div>
             { this.state.showForm ? <EventsForm  eventName={this.state.eventName} closeModal={this.closeModal}/> : ""}
-            <div className="event-card">
-              <button className="event-btn" onClick= { this.openEventUploadModal }>
-                <h1 className="event-name"> { this.state.eventName } </h1> 
-                <p className="event-desc"> {this.state.eventDesc} </p>
-              </button>
-            </div>;
+            {this.createEventCards()}
+            <div className="spinner">
+              {this.showSpinner("Loading Your Events ") }
+            </div>
           </div>
   }
 }

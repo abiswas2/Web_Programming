@@ -1,0 +1,14 @@
+footer{
+    background-color: #0324a9;
+    height: 60px;
+    color: #fff;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+footer span{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
