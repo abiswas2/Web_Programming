@@ -16,9 +16,6 @@ function HeaderComponent(){
                     <li id="events">
                         <Link to="/events">Events</Link>
                     </li>
-                    <li id="checkin">
-                        <Link to="/event-check-in">Event Check In</Link>
-                    </li>
                 </ul>
             </nav>
         </header>

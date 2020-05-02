@@ -1,10 +1,9 @@
 import axios from "axios";
 
-function UploadEventDataService(data, eventName){
+function CheckInService(pantherId, eventName, status){
         return new Promise(function(resolve, reject) {
-            console.log(data);
             try{
-                axios.post(`http://localhost:8000/events/${eventName}/upload`, data, {}).then(res => {
+                axios.patch(`http://localhost:8000/events/${eventName}/${pantherId}/?checkin=${status}`).then(res => {
                     if(res){
                         resolve(res);
                     } else{
@@ -20,4 +19,4 @@ function UploadEventDataService(data, eventName){
     });
 }
 
-export default UploadEventDataService;
+export default CheckInService;

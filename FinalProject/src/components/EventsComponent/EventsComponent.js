@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import "./EventsComponent.css";
 import "../../Loading.css";
-import "../../App.css";
 import EventsForm from "../EventsFormComponent/EventsFormComponent";
 import EventsService from '../../services/eventsService';
 
@@ -36,7 +35,7 @@ class Events extends Component {
   }
 
   createEventCards = () => {
-    if(this.state.events.length > 1){
+    if(this.state.events.length > 0){
       var eventsToShow = this.state.events;
       return eventsToShow.map((event, index)=> {
         if(event.eventName === this.state.eventName) {
@@ -49,8 +48,9 @@ class Events extends Component {
         } else{
           return <div className="event-card" key={index}>
                     <button className="event-btn">
-                      <h1 className="event-name"> { event.eventName } </h1> 
+                      <h1 className="event-name"> { event.eventName.toUpperCase() } </h1> 
                       <p className="event-desc"> {event.description } </p>
+                      <p className="event-name"> UPLOADED </p>
                     </button>
                   </div>;
         }

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import UploadEventDataService from "../../services/eventUploadService";
 import "./EventsFormComponent.css";
 
@@ -30,11 +30,11 @@ class EventsFormComponet extends Component{
         e.preventDefault();
         console.log(this.state.eventUploadObj);
         const data = new FormData();
-        //data.append("eventYear", this.state.eventUploadObj.eventYear);
         data.append('file', this.state.eventUploadObj.studentFile);
-        UploadEventDataService(data).then((result) => {
+        UploadEventDataService(data, this.props.eventName).then((result) => {
             this.props.history.push({
-                pathname: '/event-check-in'
+                pathname: '/event-check-in',
+                state: { studentData: result.data.data, eventName: this.props.eventName}
             });
         }, (err) => {
             console.log("Error while calling upload service");

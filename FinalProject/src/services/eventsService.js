@@ -37,6 +37,23 @@ const EventsService =  {
                 console.log(e);
             }
         });
+    },
+    downloadEventService(eventName){
+        return new Promise(function(resolve, reject) {
+            try{
+                axios.get(`http://localhost:8000/events/${eventName}/download`).then(res => {
+                    if(res){
+                        resolve(res);
+                    } else{
+                        reject("Event not created");
+                    }
+                })
+                .catch( (err) => {
+                });
+            } catch(e){
+                console.log(e);
+            }
+        });
     }
 }
 
