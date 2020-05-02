@@ -1,0 +1,149 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+    -o-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+    -ms-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+}
+
+thead tr th{
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.4;
+    padding: 10px;
+    background-color: #6c7ae0;
+    height: 32px;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f6ff;
+}
+
+.search-input-box{
+    padding: 20px;
+}
+
+.search-input-box label{
+    line-height: 40px;
+    color: gray;
+}
+
+.search-input-box input{
+    padding: 12px 10px 12px 20px;
+    display: block;
+    margin-bottom: 20px;
+    width: 40%;
+    font-size: 18px;
+}
+
+.search-input-box button{
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-check-in-cont{
+    margin: 40px 5%;
+}
+
+.search-check-in-cont h1{
+    font-size: 40px;
+    margin-left: 24px;
+    font-weight: 700;
+}
+
+.search-input-box .selected-filter{
+    background-color: #0324a9;
+    color: #fff;
+
+}
+
+.toggle-cell{
+    padding: 5px 20px 5px 40px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggle-switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #3ed85f;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #3ed85f;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
+  .check-in{
+    border-color: #0324a9;
+    border-style: solid;
+    background: #0324a9;
+    padding: 16px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px;
+    cursor: pointer;
+  }
+/*background-color: #0324a9;*/

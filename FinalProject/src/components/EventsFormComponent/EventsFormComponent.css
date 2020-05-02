@@ -111,3 +111,7 @@
     vertical-align: top;
     line-height: 120px;
 }
+
+.error-msg{
+    color: #cc0000;
+}

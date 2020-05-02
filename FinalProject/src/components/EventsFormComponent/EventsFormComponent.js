@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-import UploadEventData from "../../services/eventUploadService";
+import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import UploadEventDataService from "../../services/eventUploadService";
 import "./EventsFormComponent.css";
 
 class EventsFormComponet extends Component{
 
     constructor(props){
         super(props);
-        this.state =   {eventUploadObj: {}};
+        this.state =   {eventUploadObj: {}, formError: false, formErrorMsg: ""};
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleEvenFormSubmit = this.handleEvenFormSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -22,7 +23,7 @@ class EventsFormComponet extends Component{
             let eventUploadObj = Object.assign({}, prevState.eventUploadObj);  
             eventUploadObj[name] = value;
             return { eventUploadObj };                             
-            });
+        });
     }
 
     handleEvenFormSubmit(e){
@@ -31,7 +32,17 @@ class EventsFormComponet extends Component{
         const data = new FormData();
         //data.append("eventYear", this.state.eventUploadObj.eventYear);
         data.append('file', this.state.eventUploadObj.studentFile);
-        UploadEventData(data);
+        UploadEventDataService(data).then((result) => {
+            this.props.history.push({
+                pathname: '/event-check-in'
+            });
+        }, (err) => {
+            console.log("Error while calling upload service");
+            this.setState({
+                formError: true, 
+                formErrorMsg: err
+            });
+        });
     }
 
     closeModal = () => {
@@ -42,6 +53,7 @@ class EventsFormComponet extends Component{
         return (
             <div className= "eventsFormModal modal">
                 <button className="modal-close" onClick={this.closeModal}> </button>
+                { this.state.formError ? <h2 className="error-msg"> Error: { this.state.formErrorMsg } </h2>: "" }
                 <form name="eventsUploadForm" id="eventUploadForm" onSubmit={this.handleEvenFormSubmit}>
                     <h2> Event: { this.props.eventName} </h2>
                     <div className="inputCont">
@@ -80,4 +92,4 @@ class EventsFormComponet extends Component{
     }
 }
 
-export default EventsFormComponet;
+export default withRouter(EventsFormComponet);

@@ -31,8 +31,9 @@ app.post('/upload', (req, res) =>{
         } else if (err) {
             return res.status(500).json(err)
           // An unknown error occurred when uploading.
-        } 
-        console.log(req.files[0].filename);
+        }
+        // convert excel to json
+        // send json to mongo db
         // readExcelFile(__basedir + '/uploads/' + req.file.filename);
         return res.status(200).send(req.file);
         // Everything went fine.

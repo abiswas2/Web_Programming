@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import EventsComponent from "./components/EventsComponent/EventsComponent";
 import Home from "./components/HomeComponent/HomeComponent";
+import SearchCheckIn from "./components/SearchCheckInComponent/SearchCheckInComponent";
+import Download from "./components/DownloadComponent/DownloadComponent";
 import './App.css';
 
 class App extends Component {
@@ -33,6 +35,12 @@ class App extends Component {
           </Route>
           <Route path="/eventHome">
             <Home/>
+          </Route>
+          <Route path="/event-check-in">
+            <SearchCheckIn />
+          </Route>
+          <Route path="/download">
+            <Download />
           </Route>
       </Router>
     );

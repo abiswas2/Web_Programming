@@ -1,12 +1,23 @@
 import axios from "axios";
 
-function UploadEventData(data){
-    console.log(data);
-        axios.post("http://localhost:8000/upload", data, { // receive two parameter endpoint url ,form data 
-    })
-    .then(res => { // then print response status
-        console.log(res.statusText);
-    })
+function UploadEventDataService(data){
+        return new Promise(function(resolve, reject) {
+            console.log(data);
+            try{
+                axios.post("http://localhost:8000/upload", data, {}).then(res => {
+                    if(res){
+                        resolve(res);
+                    } else{
+                        reject("Upload service failed");
+                    }
+                })
+                .catch( (err) => {
+                    reject(err.message);
+                });
+            } catch(e){
+                console.log(e);
+            }
+    });
 }
 
-export default UploadEventData;
+export default UploadEventDataService;
