@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname);
     }
-})
+});
 
 const upload = multer({
     storage: storage,
@@ -36,7 +36,7 @@ const upload = multer({
         }
         return callback(null, true);
     }
-}).single('file')
+}).single('file');
 
 app.get('/', function (req, res) {
     return res.send('Hello Server')
@@ -139,9 +139,16 @@ app.get('/events/:eventName/download', (req, res) => {
     return eventsHelper.getEventData(
         req.params.eventName
     ).then(data => {
+        let fileName = req.params.eventName;
+
+        if (req.query.hasOwnProperty('checkedIn')) {
+            data.eventData = data.eventData.filter(d => d['checked_in'].toString() === req.query['checkedIn'].toLowerCase());
+            fileName += `-${req.query['checkedIn'].toLowerCase() === 'true' ? 'checked-in' : 'not-checked-in'}`;
+        }
+        
         const xls = json2xls(data.eventData);
         res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-        res.setHeader("Content-Disposition", `attachment; filename= ${req.params.eventName}.xlsx`);
+        res.setHeader("Content-Disposition", `attachment; filename= ${fileName}.xlsx`);
         res.end(xls, 'binary');
     }).catch(err => {
         res.status(err.code || 500).json(err);
