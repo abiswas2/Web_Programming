@@ -42,7 +42,7 @@ class Events extends Component {
           return <div className="event-create-card" key={index}>
                   <button className="event-btn" onClick= { this.openEventUploadModal }>
                     <h1 className="event-name"> New Event: { this.state.eventName } </h1> 
-                    <p className="event-desc"> { this.state.eventDesc } </p>
+                    <p className="new-event-desc"> { this.state.eventDesc } </p>
                   </button>
                 </div>;
         } else{

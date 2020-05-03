@@ -22,6 +22,16 @@
     font-size: 16px;
 } 
 
+.error{
+    color: #cc0000;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.inputCont .error-input{
+    border: 3px solid #cc0000;
+}
+
 #eventUploadForm .inputCont label{
     color: #403e3e;
 }
