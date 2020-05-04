@@ -32,6 +32,20 @@
     border: 3px solid #cc0000;
 }
 
+
+.select-class{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+    width: 64%;
+    margin-left: 25px;
+    margin-right: 20px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 0px;
+}
+
 #eventUploadForm .inputCont label{
     color: #403e3e;
 }

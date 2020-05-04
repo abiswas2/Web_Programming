@@ -7,7 +7,7 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: '', desc: '', toEvent: false, loading: false, error: "", selectValue: "Academics"};
+    this.state = {value: '', desc: '', toEvent: false, loading: false, error: "", selectValue: "academics"};
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeDesc = this.handleChangeDesc.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -82,16 +82,16 @@ class Home extends Component {
                 </label>
                 <input type="text" value={this.state.desc} placeholder="Event description" onChange={this.handleChangeDesc} />
               </div>
-{/*               <div className="inputCont">
+               <div className="inputCont">
                 <label>
-                  Enter Type:
+                  Enter Event Type:
                 </label>
-                <select value={this.state.selectValue} onChange={this.handleSelectChange}>
+                <select className="select-class" value={this.state.selectValue} onChange={this.handleSelectChange}>
                   <option value="academics">Academics</option>
                   <option value="sports">Sports</option>
                   <option value="cultural">Cultural</option>
                 </select>
-              </div> */}
+              </div> 
               <input type="submit" value="Submit" className="submit-event"/>
             </form>
         </div>

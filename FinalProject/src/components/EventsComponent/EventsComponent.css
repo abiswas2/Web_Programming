@@ -5,7 +5,7 @@
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     background-color: rgb(0, 52, 169);
     margin: 20px;
-    float: left;
+    display: inline-block;
 }
 
 .event-create-card{
@@ -14,38 +14,50 @@
     margin: 0 auto;
     width: 300px;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    float:left;
+    float: left;;
     margin: 20px;
 }
 
 .academics{
-    background-image: url(/static/media/academics.9aad67f8.jpg);
-    background-repeat: no-repeat;
+    background-image: url("../../images/academics.jpg");
     background-size: cover;
 }
 
 .sports{
-
+    background-image: url("../../images/sports.jpg");
+    background-size: cover;
 }
 
 .cultural{
+    background-image: url("../../images/cultural.jpg");
+    background-size: cover;
+}
 
+.new-event-name{
+    background-color: #11ceec;
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+    margin: 0px;
+}
+
+.new-event-desc{
+    background-color: #11ceec;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin: 0px;
 }
 
 .event-name{
     font-size: 24px;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
 }
 
 .event-desc{
     color: #e88c8c;
-    text-align: center;
-    font-size: 18px;
-}
-
-.new-event-desc{
-    color:#fff;
     text-align: center;
     font-size: 18px;
 }

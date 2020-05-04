@@ -10,6 +10,7 @@ class Events extends Component {
   constructor(props) {
     super(props);
     if(this.props.location.state){
+      console.log(this.props.location.state.eventType);
       this.state = { eventName: this.props.location.state.eventName, eventDesc: this.props.location.state.eventDesc, showForm: false, events: []};
     } else{
       this.state = { eventName: "", eventDesc: "", showForm: false, events: []};
@@ -39,10 +40,10 @@ class Events extends Component {
       var eventsToShow = this.state.events;
       return eventsToShow.map((event, index)=> {
         if(event.eventName === this.state.eventName) {
-          return <div className="event-create-card" key={index}>
-                  <button className="event-btn" onClick= { this.openEventUploadModal }>
-                    <h1 className="event-name"> New Event: { this.state.eventName } </h1> 
-                    <p className="new-event-desc"> { this.state.eventDesc } </p>
+          return <div className={`event-create-card ${this.props.location.state.eventType}`} key={index} onClick= { this.openEventUploadModal }>
+                  <h1 className="new-event-name"> { this.state.eventName } </h1> 
+                  <p className="new-event-desc"> { this.state.eventDesc } </p>
+                  <button className="event-btn">
                   </button>
                 </div>;
         } else{
